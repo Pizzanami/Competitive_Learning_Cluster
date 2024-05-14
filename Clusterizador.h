@@ -1,27 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #ifndef CLUSTERIZADOR_H
 #define CLUSTERIZADOR_H 1
+
 typedef struct{
     int carac;
     float* x;
     float* x_norm;
-    }data;
+    }Data;
 
 typedef struct{
     int cant;
-    data* X;
-    }dataset_normal;
+    Data* X;
+    }Dataset_normal;
 
 typedef struct{
     int cant_clust;
-    data** clust;
-}clusters;
+    Data** clust;
+}Clusters;
+
 
 // Funciones
-
-float* normalizacion(float* vector, int size);
+void init_Data(Data *data, int car);
+Data normalizacion(Data dato);
 float* clusterizar();
 
 #include "Clusterizador.c"
